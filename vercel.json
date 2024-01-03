@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.php": { "runtime": "vercel-php@0.6.0" }
+  },
+  "routes": [
+    {
+      "src": "/(.*)\\.(.*)$",
+      "dest": "public/$1.$2"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ],
+  "env": {
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_KEY": "base64:OrXszSgZyu+Rjz6GBUUZtwaIUivaoXvYWta+aGkhduc=",
+    "APP_URL": "https://www.laravel-example.vercel.app"
+  }
+}
