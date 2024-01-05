@@ -102,6 +102,8 @@ class GithubCard extends Controller
         }
         $langescolhida = $coreslangs[$langescolhida];
 
-        return view('githubcard', ['data' => $data, 'corlang' => $langescolhida]);
+        $cardSvg = view('githubcard', ['data' => $data, 'corlang' => $langescolhida])->render();
+
+        return response($cardSvg)->header('Content-Type', 'image/svg+xml');
     }
 }
